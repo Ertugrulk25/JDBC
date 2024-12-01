@@ -11,26 +11,26 @@ public class ExecuteQuerry01 {
 
         //n04-ADIM
         System.out.println("--------------------------ÖRNEK 1 ------------------------");
-//ÖRNEK 1:id'si 5 ile 10 arasında olan ülkelerin "country_name" bilgisini listeleyiniz.
+        //ÖRNEK 1:id'si 5 ile 10 arasında olan ülkelerin "country_name" bilgisini listeleyiniz.
         String sql1="Select country_name from countries where id between 5 and 10";
         boolean query1=statement.execute(sql1);
         System.out.println("query1 = " + query1);//true
-/*
-verileri alabilmek için:
-JDBC kullanarak veri çekme işlemi sonrasında
-veri listelemek için ResultSet sınıfı kullanılır.
+    /*
+    verileri alabilmek için:
+    JDBC kullanarak veri çekme işlemi sonrasında
+    veri listelemek için ResultSet sınıfı kullanılır.
 
-SQL sorgusu çalıştırıldıktan sonra veritabanından alınan
-verileri saklar. Verilerin arasında gitmemizi sağlar.
-Adv NOT: Veriler üzerinde dolaşmak için next, first, last, previous,
-absolute gibi metotlara sahiptir. Bunun için ayarlama gereklidir.
+    SQL sorgusu çalıştırıldıktan sonra veritabanından alınan
+    verileri saklar. Verilerin arasında gitmemizi sağlar.
+    Adv NOT: Veriler üzerinde dolaşmak için next, first, last, previous,
+    absolute gibi metotlara sahiptir. Bunun için ayarlama gereklidir.
  */
         ResultSet rs=statement.executeQuery(sql1);
         while (rs.next()){
             System.out.println("Ülke Adı : "+rs.getString("country_name"));
         }
         System.out.println("--------------------ÖRNEK 2------------------------");
-//ÖRNEK 2: phone_code'u 200 den büyük olan ülkelerin "phone_code" ve "country_name" bilgisini listeleyiniz
+    //ÖRNEK 2: phone_code'u 200 den büyük olan ülkelerin "phone_code" ve "country_name" bilgisini listeleyiniz
         String sql2="SELECT phone_code,country_name from countries where phone_code>200 order by phone_code";
         ResultSet rs2=statement.executeQuery(sql2);
         while (rs2.next()){
