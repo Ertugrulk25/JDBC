@@ -56,6 +56,14 @@ public class ExecuteQuerry01 {
         //ÖDEV:Puanı taban puanlarının ortalamasından yüksek olan
         // öğrencilerin isim ve puanlarını listeleyiniz.
 
+
+        ResultSet rs4  =statement.executeQuery("SELECT isim, puan FROM ogrenciler WHERE puan>(SELECT AVG(taban_puani) FROM bolumler)");
+        while (rs4.next()){
+            System.out.println(" --- isim : " + rs4.getString("isim")+
+                    " --- puan : " + rs4.getInt("puan")
+                    );
+
+        }
     }
 
 }
