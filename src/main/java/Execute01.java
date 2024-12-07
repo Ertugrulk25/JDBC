@@ -10,7 +10,7 @@ public class Execute01 {
         //n01-ADIM : veri tabanı  sürücü sınıfını kaydetmekle başlayabiliriz.
         Class.forName("org.postgresql.Driver");
         // n02 ADIM bağlantıyı oluşturma  : DB URL
-        Connection con=DriverManager.getConnection("jdbc:postgresql://localhost:5432/jdbc_dt","techpro","password");
+        Connection con=DriverManager.getConnection("jdbc:postgresql://localhost:5432/jdbc","techpro","password");
 
         //n03-ADIM : Statement olusturma
         Statement statement=con.createStatement();

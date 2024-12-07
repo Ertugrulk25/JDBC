@@ -4,7 +4,7 @@ public class ExecuteQuerry01 {
     public static void main(String[] args) throws SQLException {
 
         //n02-ADIM : bağlantıyı olusturma : DB URL
-        Connection con= DriverManager.getConnection("jdbc:postgresql://localhost:5432/jdbc_dt","techpro","password");
+        Connection con= DriverManager.getConnection("jdbc:postgresql://localhost:5432/jdbc","techpro","password");
 
         //n03-ADIM : Statement olusturma
         Statement statement=con.createStatement();
